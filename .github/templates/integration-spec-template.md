@@ -4,9 +4,12 @@
 |--------------------|------------------------------|
 | **Spec Version**   | 1.0                          |
 | **Status**         | Draft / In Review / Approved |
+| **Client/Project** |                              |
+| **Engagement ID**  |                              |
 | **Author**         |                              |
 | **Last Updated**   |                              |
 | **Reviewers**      |                              |
+| **Pattern Reference** | (if reusable pattern)     |
 
 ---
 
@@ -18,11 +21,11 @@
 
 ### 1.2 Systems Involved
 
-| Role    | System           | Version | Owner / Team |
-|---------|------------------|---------|--------------|
-| Source  |                  |         |              |
-| Target  |                  |         |              |
-| Middleware |               |         |              |
+| Role    | System           | Version | Owner / Team | Client/Vendor |
+|---------|------------------|---------|--------------|---------------|
+| Source  |                  |         |              |               |
+| Target  |                  |         |              |               |
+| Middleware |               |         |              |               |
 
 ### 1.3 Integration Pattern
 
@@ -46,9 +49,10 @@
 
 ### 2.3 Stakeholders
 
-| Name | Role | Responsibility |
-|------|------|----------------|
-|      |      |                |
+| Name | Role | Organization | Responsibility |
+|------|------|--------------|----------------|
+|      |      | Client       |                |
+|      |      | DXP Team     |                |
 
 ---
 
@@ -56,12 +60,14 @@
 
 ### 3.1 Endpoints
 
-| System | Environment | Base URL / Connection String | Notes |
-|--------|-------------|------------------------------|-------|
-|        | DEV         |                              |       |
-|        | QA          |                              |       |
-|        | STAGING     |                              |       |
-|        | PROD        |                              |       |
+| System | Environment | Base URL / Connection String | Region | Notes |
+|--------|-------------|------------------------------|--------|-------|
+|        | DEV         |                              |        |       |
+|        | QA          |                              |        |       |
+|        | UAT         |                              |        |       |
+|        | STAGING     |                              |        |       |
+|        | PROD        |                              |        |       |
+|        | PROD (DR)   |                              |        |       |
 
 ### 3.2 Protocol & Transport
 
@@ -219,6 +225,33 @@ flowchart LR
 
 > Data classification, PII handling, encryption in transit/at rest, regulatory requirements.
 
+### 8.4 DXP-Specific Considerations
+
+**Multi-Channel Delivery:**
+> Web, mobile app, native apps, IoT, headless/API delivery
+
+**Personalization & Analytics:**
+| Consideration | Details |
+|---------------|----------|
+| Personalization data flow |  |
+| Analytics/tracking events |  |
+| Customer data synchronization | |
+
+**Content Delivery:**
+| Consideration | Details |
+|---------------|----------|
+| CDN strategy |  |
+| Cache invalidation approach |  |
+| Preview vs. Published modes |  |
+| A/B testing integration |  |
+
+**Performance:**
+| Consideration | Details |
+|---------------|----------|
+| Image optimization pipeline |  |
+| Lazy loading requirements |  |
+| Edge caching rules |  |
+
 ---
 
 ## 9. Testing Strategy
@@ -255,7 +288,39 @@ flowchart LR
 
 ---
 
-## 11. Open Items
+## 11. Client Handoff & Support
+
+### 11.1 Client Documentation
+
+> Links to client-facing documentation, API usage guides, integration guides
+
+### 11.2 Support Responsibilities
+
+| Responsibility | DXP Team | Client Team | Vendor |
+|----------------|----------|-------------|--------|
+| Integration monitoring |  |  |  |
+| Error triage |  |  |  |
+| API credential management |  |  |  |
+| Endpoint updates |  |  |  |
+| Data mapping changes |  |  |  |
+| Performance optimization |  |  |  |
+
+### 11.3 Escalation Path
+
+| Severity | First Contact | Escalation Point | SLA |
+|----------|---------------|------------------|-----|
+| P1 (Critical) |  |  |  |
+| P2 (High) |  |  |  |
+| P3 (Medium) |  |  |  |
+| P4 (Low) |  |  |  |
+
+### 11.4 Client Access & Monitoring
+
+> Dashboards, logs, monitoring tools the client has access to
+
+---
+
+## 12. Open Items
 
 | # | Item | Owner | Due Date | Status |
 |---|------|-------|----------|--------|
@@ -263,10 +328,12 @@ flowchart LR
 
 ---
 
-## 12. Approval
+## 13. Approval
 
 | Role | Name | Date | Signature |
 |------|------|------|-----------|
-| SA   |      |      |           |
-| Dev Lead |  |      |           |
-| Business |  |      |           |
+| Solution Architect |  |  |  |
+| Dev Lead |  |  |  |
+| Client Technical Lead |  |  |  |
+| Client Business Owner |  |  |  |
+| DXP Delivery Manager |  |  |  |

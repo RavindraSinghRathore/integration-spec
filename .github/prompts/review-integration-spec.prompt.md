@@ -1,11 +1,5 @@
 ---
-mode: agent
 description: Review an integration spec for completeness, consistency, and gaps
-tools:
-  - read_file
-  - grep_search
-  - file_search
-  - semantic_search
 ---
 
 # Review Integration Spec

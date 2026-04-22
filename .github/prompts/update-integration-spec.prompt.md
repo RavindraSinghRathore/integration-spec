@@ -1,13 +1,5 @@
 ---
-mode: agent
 description: Review and update an existing integration specification
-tools:
-  - read_file
-  - replace_string_in_file
-  - grep_search
-  - file_search
-  - semantic_search
-  - renderMermaidDiagram
 ---
 
 # Update Integration Spec

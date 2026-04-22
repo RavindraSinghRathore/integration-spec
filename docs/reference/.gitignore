@@ -1,0 +1,26 @@
+# Sensitive documentation patterns
+docs/reference/**/*credentials*
+docs/reference/**/*password*
+docs/reference/**/*secret*
+docs/reference/**/*token*
+docs/reference/**/*private*
+
+# Specific sensitive file types
+docs/reference/**/*.key
+docs/reference/**/*.pem
+docs/reference/**/*.p12
+docs/reference/**/*.pfx
+
+# Temporary or working files
+docs/reference/**/*.tmp
+docs/reference/**/.DS_Store
+docs/reference/**/Thumbs.db
+docs/reference/**/*~
+
+# Large files that should be linked, not committed
+docs/reference/**/*.zip
+docs/reference/**/*.tar.gz
+docs/reference/**/*.rar
+
+# Client-specific ignore patterns (uncomment and customize as needed)
+# docs/reference/specific-client/sensitive-folder/
